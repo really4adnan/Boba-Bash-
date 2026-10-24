@@ -1,22 +1,69 @@
 body{
     text-align: center;
 }
-@import url(https://googleapis.com);
-:root{
-    --pumpkin: #ff7518;
-    --black: #000000;
+@import url('https://googleapis.com');
+
+:root {
+  --pumpkin-orange: #FF7518;
+  --midnight-black: #0A0A0A;
+  --witchy-purple: #6A0DAD;
+  --slime-green: #32CD32;
+  --ghost-white: #F8F9FA;
 }
-body {
-  background-color: var(--shadow-black);
-  color: var(--witch-white);
-  font-family: 'Oswald', sans-serif; /* Clean, bold font for body text */
-  margin: 0;
-  padding: 20px;
-  line-height: 1.6;
+
+body.halloween-theme {
+  background-color: var(--midnight-black);
+  background-image: radial-gradient(circle at center, #1b122c 0%, #0a0a0a 85%);
+  color: var(--ghost-white);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-h1 {
-  font-family: 'Nosifer', sans-serif; /* Dripping blood/oozing text effect */
+
+body.halloween-theme h1, 
+body.halloween-theme h2, 
+body.halloween-theme h3 {
+  font-family: 'Nosifer', cursive;
   color: var(--pumpkin-orange);
-  text-align: center;
-  font-size: 3.5rem;
-  margin-top: 50px;
+  text-shadow: 0 0 10px rgba(255, 117, 24, 0.6), 0 0 20px rgba(106, 13, 173, 0.4);
+}
+
+@keyframes flicker {
+  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 10px rgba(255, 117, 24, 0.8), 0 0 20px rgba(255, 117, 24, 0.5);
+  }
+  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+    opacity: 0.3;
+    text-shadow: none;
+  }
+}
+
+body.halloween-theme .spooky-glow {
+  animation: flicker 4s infinite linear;
+}
+
+body.halloween-theme .card, 
+body.halloween-theme .box {
+  background-color: #15111b;
+  border: 1px solid var(--witchy-purple);
+  box-shadow: 0 0 15px rgba(106, 13, 173, 0.3);
+  border-radius: 8px;
+}
+
+body.halloween-theme .btn-halloween {
+  background-color: var(--pumpkin-orange);
+  color: var(--midnight-black);
+  font-family: 'Eater', cursive;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px var(--pumpkin-orange);
+}
+
+body.halloween-theme .btn-halloween:hover {
+  background-color: var(--slime-green);
+  color: var(--midnight-black);
+  box-shadow: 0 0 20px var(--slime-green);
+  transform: scale(1.05);
+}
