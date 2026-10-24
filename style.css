@@ -1,0 +1,22 @@
+body{
+    text-align: center;
+}
+@import url(https://googleapis.com);
+:root{
+    --pumpkin: #ff7518;
+    --black: #000000;
+}
+body {
+  background-color: var(--shadow-black);
+  color: var(--witch-white);
+  font-family: 'Oswald', sans-serif; /* Clean, bold font for body text */
+  margin: 0;
+  padding: 20px;
+  line-height: 1.6;
+}
+h1 {
+  font-family: 'Nosifer', sans-serif; /* Dripping blood/oozing text effect */
+  color: var(--pumpkin-orange);
+  text-align: center;
+  font-size: 3.5rem;
+  margin-top: 50px;
